@@ -244,6 +244,17 @@ export const MODULES: ModuleMeta[] = [
     actionTargets: {"发布模板": "已发布", "标记异常": "格式异常", "停用模板": "已停用"},
     metrics: ["模板总数", "已发布模板", "格式异常数"],
   },
+  {
+    key: "retention_correction",
+    name: "留存纠正批次",
+    entity: "留存纠正批次",
+    desc: "对迟到的同期群回访做批量纠正，逐条关联回访与观察期，并支持两轮留存复盘排名。",
+    fields: ["批次编号", "涉及群组", "接受回访", "拒绝记录", "重复提交", "待补证群组", "复盘状态"],
+    statuses: ["已计算", "已发布"],
+    actions: ["执行复盘", "发布复盘"],
+    actionTargets: {"执行复盘": "已计算", "发布复盘": "已发布"},
+    metrics: ["批次总数", "已发布批次", "拒绝记录数"],
+  },
 ]
 
 export const MODULE_BY_KEY: Map<string, ModuleMeta> = new Map(
